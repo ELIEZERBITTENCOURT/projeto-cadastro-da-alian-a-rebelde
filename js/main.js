@@ -85,7 +85,7 @@ const createRow = (cadete, index) => {
 //limpa tabela
 const clearTable = () => {
     const rows = document.querySelectorAll('#tableCadete>tbody tr')
-    rows.forEach(row => row.parentNode.removeChild(row))
+    rows.forEach(row => row.parentNode.removeChild(row))//pega pai de cada linha e remove o filho chamado row
 }
 //altera tabela
 const updateTable = () => {
@@ -93,13 +93,13 @@ const updateTable = () => {
     clearTable()
     dbCadete.forEach(createRow)
 }
-//lista informações
+//lista informações = preencher campos
 const fillFields = (cadete) => {
     document.getElementById('name').value = cadete.nome
     document.getElementById('planeta').value = cadete.planeta
     document.getElementById('date').value = cadete.date
     document.getElementById('motivo').value = cadete.motivo
-    document.getElementById('name').dataset.index = cadete.index
+    document.getElementById('name').dataset.index = cadete.index // index para preencher campo
 }
 
 const editCadete = (index) => {
